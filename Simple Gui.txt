@@ -64,6 +64,7 @@ local function makeButton(text, x, y, onClick)
     Btn.Parent = Frame
 
     Btn.MouseButton1Click:Connect(onClick)
+ScreenGui:Destroy()
 
     return Btn
 end
@@ -175,4 +176,5 @@ local Players = game:GetService("Players")
 local player = Players.LocalPlayer
 TeleportService:Teleport(game.PlaceId, player)
     
+
 end)
