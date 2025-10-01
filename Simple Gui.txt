@@ -19,7 +19,7 @@ ScreenGui.ResetOnSpawn = false
 local Frame = Instance.new("Frame")
 Frame.Size = UDim2.new(0, 500, 0, 350)
 Frame.Position = UDim2.new(0.5, -250, 0.5, -175)
-Frame.BackgroundColor3 = Color3.fromRGB(144, 238, 144) -- light green
+Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255) 
 Frame.BorderSizePixel = 0
 Frame.Active = true
 Frame.Draggable = true
@@ -30,11 +30,11 @@ local Title = Instance.new("TextLabel")
 Title.Text = "OTW BANNED"
 Title.Size = UDim2.new(1, -50, 0, 50)
 Title.Position = UDim2.new(0, 0, 0, 0)
-Title.BackgroundColor3 = Color3.fromRGB(170, 255, 170) -- lighter green strip
+Title.BackgroundColor3 = Color3.fromRGB(0, 0, 0) 
 Title.BorderSizePixel = 0
 Title.TextScaled = true
 Title.Font = Enum.Font.SourceSansBold
-Title.TextColor3 = Color3.fromRGB(0, 0, 0)
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
 Title.Parent = Frame
 
 -- Close Button
@@ -174,5 +174,118 @@ local TeleportService = game:GetService("TeleportService")
 local Players = game:GetService("Players")
 local player = Players.LocalPlayer
 TeleportService:Teleport(game.PlaceId, player)
+    
+end)
+
+makeButton("MOUNT SOLARA", 20, 130, function()
+    StarterGui:SetCore("SendNotification", {
+        Title = "Auto Submit Active",
+        Text = "Leave Game Untuk Stop",
+        Duration = 5
+    })
+    
+    -- SOLARA
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+
+local checkpoints = {
+    -- Checkpoint 1-10
+    Vector3.new(799, 66, -307),
+    Vector3.new(834, 74, -99),
+    Vector3.new(967, 107, 33),
+    Vector3.new(729, 106, 23),
+    Vector3.new(784, 106, 370),
+    Vector3.new(916, 142, 626),
+    Vector3.new(603, 226, 907),
+    Vector3.new(677, 330, 622),
+    Vector3.new(552, 266, 437),
+    Vector3.new(201, 210, 134),
+
+    -- Checkpoint 11-20
+    Vector3.new(196, 213, -142),
+    Vector3.new(277, 213, -503),
+    Vector3.new(320, 221, -780),
+    Vector3.new(-198, 369, -578),
+    Vector3.new(-261, 393, -244),
+    Vector3.new(-306, 552, 100),
+    Vector3.new(-326, 581, 384),
+    Vector3.new(148, 709, 874),
+    Vector3.new(-281, 717, 828),
+    Vector3.new(-819, 725, 675),
+
+    -- Checkpoint 21-30
+    Vector3.new(-825, 821, 479),
+    Vector3.new(-822, 821, 240),
+    Vector3.new(-799, 804, -122),
+    Vector3.new(-814, 706, -724),
+    Vector3.new(-808, 3003, -2023),
+    Vector3.new(-784, 3096, -2117),
+    Vector3.new(-629, 3288, -1997),
+    Vector3.new(-627, 3419, -1687),
+    Vector3.new(-385, 3517, -1448),
+    Vector3.new(-411, 3516, -552),
+
+    -- Checkpoint 31-37
+    Vector3.new(-417, 3698, -482),
+    Vector3.new(-549, 3710, -207),
+    Vector3.new(-243, 3746, -42),
+    Vector3.new(107, 3746, 742),
+    Vector3.new(301, 4020, 1498),
+    Vector3.new(371, 4019, 2503),
+    Vector3.new(459, 4018, 3255),
+    Vector3.new(482, 4021, 3557),
+    Vector3.new(866, 20, -791),
+}
+ while true do
+local function teleportTo(pos)
+    local char = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
+    local hrp = char:WaitForChild("HumanoidRootPart")
+    local humanoid = char:WaitForChild("Humanoid")
+
+
+    task.wait(2.5)
+    hrp.CFrame = CFrame.new(pos)
+
+   
+end
+
+
+for _, pos in ipairs(checkpoints) do
+    teleportTo(pos)
+end
+end
+    
+end)
+
+makeButton("DINO EXPEDITION", 20, 200, function()
+    StarterGui:SetCore("SendNotification", {
+        Title = "System",
+        Text = "HD Admin Loader activated (only if HD Admin is not in the game)",
+        Duration = 5
+    })
+    
+    local pos = Vector3.new(1327, 630, 2772)
+local delay = 4
+local tween_s = game:GetService('TweenService')
+local tweeninfo = TweenInfo.new(delay,Enum.EasingStyle.Linear)
+local lp = game.Players.LocalPlayer
+if lp.Character and lp.Character:FindFirstChild('HumanoidRootPart') then
+    local cf = CFrame.new(pos)
+    local a = tween_s:Create(lp.Character.HumanoidRootPart,tweeninfo,{CFrame=cf})
+    a:Play()
+end
+wait (5)
+
+local pos = Vector3.new(1795, 676, 2653)
+local delay = 4
+local tween_s = game:GetService('TweenService')
+local tweeninfo = TweenInfo.new(delay,Enum.EasingStyle.Linear)
+local lp = game.Players.LocalPlayer
+if lp.Character and lp.Character:FindFirstChild('HumanoidRootPart') then
+    local cf = CFrame.new(pos)
+    local a = tween_s:Create(lp.Character.HumanoidRootPart,tweeninfo,{CFrame=cf})
+    a:Play()
+end
+wait (5)
     
 end)
