@@ -66,7 +66,6 @@ local function makeButton(text, x, y, onClick)
     Btn.MouseButton1Click:Connect(onClick)
 
     return Btn
-    ScreenGui:Destroy()
 end
 
 -- Loader Button
@@ -177,3 +176,4 @@ local player = Players.LocalPlayer
 TeleportService:Teleport(game.PlaceId, player)
     
 end)
+
